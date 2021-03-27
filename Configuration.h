@@ -81,10 +81,10 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
-#define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
-#define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
+//#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+//#define SHOW_BOOTSCREEN
+//#define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
+//#define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -136,7 +136,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-//#define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Hypercube"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -374,14 +374,18 @@
   //#define SLOW_PWM_HEATERS // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
-  #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
+  #define PID_FUNCTIONAL_RANGE 25 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
+//  #define DEFAULT_Kp 22.2
+//  #define DEFAULT_Ki 1.08
+//  #define DEFAULT_Kd 114
+
   #define DEFAULT_Kp 22.2
-  #define DEFAULT_Ki 1.08
+  #define DEFAULT_Ki 2.08
   #define DEFAULT_Kd 114
 
   // MakerGear
@@ -555,9 +559,9 @@
 #define Z_DRIVER_TYPE  DRV8825
 //#define X2_DRIVER_TYPE DRV8825
 //#define Y2_DRIVER_TYPE DRV8825
-#define Z2_DRIVER_TYPE DRV8825
+//#define Z2_DRIVER_TYPE DRV8825
 #define E0_DRIVER_TYPE DRV8825
-#define E1_DRIVER_TYPE DRV8825
+//#define E1_DRIVER_TYPE DRV8825
 //#define E2_DRIVER_TYPE DRV8825
 //#define E3_DRIVER_TYPE DRV8825
 //#define E4_DRIVER_TYPE DRV8825
@@ -623,7 +627,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 7000 }
+#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 100, 7000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -633,7 +637,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          500     // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          1000     // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  7000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   4000    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -1255,11 +1259,11 @@
 // @section temperature
 
 // Preheat Constants
-#define PREHEAT_1_TEMP_HOTEND 205
+#define PREHEAT_1_TEMP_HOTEND 225
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED    50 // Value from 0 to 255
 
-#define PREHEAT_2_TEMP_HOTEND 240
+#define PREHEAT_2_TEMP_HOTEND 260
 #define PREHEAT_2_TEMP_BED     100
 #define PREHEAT_2_FAN_SPEED    50 // Value from 0 to 255
 
